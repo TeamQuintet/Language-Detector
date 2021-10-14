@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+}
+
+textarea {
+    padding: 10px;
+    margin: 10px;
+    background-color: aqua;
+}
