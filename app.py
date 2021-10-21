@@ -1,10 +1,6 @@
 from flask import Flask, redirect, render_template, request, jsonify
 from flask.helpers import make_response, url_for
-# import pandas as pd
-# import tensorflow as tf
-# import keras
-# from keras.models import load_model
-
+from extract import extractFromFile
 
 app = Flask(__name__)
 
@@ -21,6 +17,12 @@ def predictor():
 @app.route("/translate", methods=["GET", "POST"])
 def translator():
     return render_template("translate.html")
+
+@app.route("/upload", methods=["GET", "POST"])
+def upload():
+    imagefile = request.files.get('imagefile', '')
+    text = extractFromFile()
+    return render_template("detect.html", content=text)
 
 if __name__ == '__main__':
     app.run(debug=True)

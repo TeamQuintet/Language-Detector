@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">About</a>
@@ -50,6 +50,8 @@
                   <span class="textarea_count"></span>
                 </form>
             </div>
+            <input type="file" name="imagefile" value="{{request.form.imagefile}}" id="fileToUpload">
+            <a id="btn btn-upload" href="#">Upload</a><br>
             <a class="btn btn-second" href="#">Translate</a>
           </div>
         </div>
